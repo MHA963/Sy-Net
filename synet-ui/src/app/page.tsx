@@ -5,7 +5,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100">
       <Head>
         <title>SYnet - Secure Your .sy Domain</title>
-        <meta name="description" content="Register and manage .sy domains with SYnet. Affordable pricing and easy management." />
+        <meta name="description" content="Register & manage .sy domains with SYnet. Affordable pricing and easy management." />
       </Head>
 
       {/* Hero Section */}
