@@ -67,6 +67,34 @@ graph TD;
     end
 
 ```
+### System components :
+
+
+| **Component** | **Role in the System** |
+|--------------|----------------|
+| 🌐 **User** | The person registering a `.sy` domain. |
+| 💻 **SYNET Frontend (Next.js)** | The user-facing website for domain registration. |
+| 🔀 **SYNET API Gateway** | Handles requests and communication between frontend, database, and NIC Syria. |
+| 🗄️ **SYNET Domain Database** | Stores cached domain data to reduce direct NIC Syria queries. |
+| 🔐 **SYNET Authentication** | Verifies user identity before proceeding with purchases. |
+| 💳 **SYNET Payment Processor** | Processes payments using Stripe, bank API, or other providers. |
+| 🧾 **SYNET Invoice Generator** | Issues invoices for successful payments. |
+| 🏛️ **NIC Syria Registry** | The official government entity managing `.sy` domains. |
+| 📜 **NIC Registry Database** | Stores official `.sy` domain records. |
+| 👨‍💼 **NIC Admin Review** | Government officials who manually review domain requests. |
+| 🏦 **NIC Payment System** | Government's payment processing system for domain purchases. |
+| 🌍 **NIC DNS Servers** | The authoritative DNS for `.sy` domains. |
+| 🔄 **NIC Backup Servers** | Maintains a secondary copy of `.sy` registry data. |
+
+---
+
+### **Key Features**
+✅ **Handles both SYNET and NIC Syria's systems.**  
+✅ **Covers the full registration process from user entry to government approval.**  
+✅ **Includes payment flow for both SYNET and NIC Syria.**  
+✅ **Shows backup and DNS infrastructure for reliability.**  
+
+---
 
 
 ### 2. SY gov system 
@@ -76,34 +104,39 @@ The Syrian government system is responsible for maintaining the official domain 
 ```mermaid
 graph TD;
 
-    %% 🟢 User Interaction
-    A1["User 👤"] --> A2["SYNET Frontend 💻 (Next.js)"]
-    A2 --> A3["SYNET API Gateway 🌍"]
-    A3 --> A4["SYNET Domain Database 🗄"]
-
-    %% 🔄 If domain is not found locally, query NIC Syria
-    A3 -- "Not Found ❌" --> B1["NIC Syria Registry 🏛"]
-    B1 --> B2["NIC Registry Database 📜"]
+    %% NIC Syria Backend (Hardware and Software Components)
+    B1["NIC Syria Registry 🏛"] --> B2["NIC Registry Database 📜"]
     B2 --> B1
-    B1 --> A3
+    B2 --> B8["NIC Backup Servers 📀"]
+    B1 --> B5["NIC DNS Servers 🌍"]
+    B5 --> B6["NIC Public DNS"]
+    B5 --> B7["NIC Private DNS"]
 
-    %% 📝 User Proceeds to Register Domain
-    A2 --> A5["SYNET Auth Server 🔐"]
-    A2 --> A6["SYNET Payment Processor 💰"]
-    A6 --> A7["SYNET Invoice Generator 📄"]
-
-    %% 📩 SYNET Requests NIC Syria for Registration
-    A3 --> B1
-    B1 --> B3["NIC Admin Review Team 📝"]
-    
-    %% ✅ Domain Registration Approval Flow
+    %% Domain Registration Approval Flow
     B3 -- "Approved ✔️" --> B4["NIC Payment System 🏦"]
     B4 --> B5["Payment Confirmed 📜"]
     B5 --> B2
-    B2 --> B6["NIC DNS Servers 🌍"]
-    B2 --> B7["NIC Backup Servers 📀"]
+    B2 --> B6
+    B2 --> B7
 
-    %% ❌ Alternative Rejection Flow
-    B3 -- "Rejected ❌" --> A3
-    A3 --> A2
 ```	
+
+### **NIC Syria Infrastructure - Components with Price Estimates and Usage**
+
+Here's a detailed table listing the required components for **NIC Syria**'s infrastructure along with estimated prices and their usage:
+
+| **Component**                  | **Description**                                                                 | **Estimated Price (USD)**     | **Usage**                                 |
+|---------------------------------|---------------------------------------------------------------------------------|-------------------------------|-------------------------------------------|
+| **Web Servers**                 | Servers that handle domain registration and user interactions.                 | $3,000 (x2 servers)           | Hosting NIC’s public-facing applications |
+| **Application Servers**         | Servers for domain registration processing and API handling.                   | $6,000 (x4 servers)           | Load balancing for API requests          |
+| **Database Servers**            | Servers hosting the NIC registry database (PostgreSQL or MySQL).               | $8,000 (x2 servers)           | Store domain registration data           |
+| **DNS Servers**                 | High-availability DNS servers for domain resolution.                           | $5,000 (x2 servers)           | Resolve queries for .sy domains          |
+| **Backup Servers**              | Backup storage for registry data, DNS records, and system configuration.      | $4,000 (x2 servers)           | Ensure data redundancy and recovery      |
+| **Networking Equipment**        | Routers, firewalls, and load balancers for network traffic management.         | $7,000 (network equipment)    | Manage traffic and secure communication  |
+| **Security Appliances (IDS/IPS)** | Security devices to monitor and protect against cyber threats.                | $5,000 (x2 appliances)        | Protect against DDoS, intrusions, and attacks |
+| **Load Balancers**              | Distribute traffic between servers to ensure efficient resource usage.        | $4,500 (x2 devices)           | Ensure high availability for services    |
+| **VPN Access Solutions**        | Secure remote access for administrative use.                                  | $2,000 (VPN hardware/software) | Provide secure admin access              |
+| **Payment Gateway Integration** | Integration for payment processing for domain registration fees.              | $3,000 (integrations + licenses) | Facilitate secure transactions           |
+| **Domain Management Software**  | Software for managing domain registrations, renewals, and updates.             | $10,000 (custom software dev) | Manage domain registration and workflows |
+
+---
