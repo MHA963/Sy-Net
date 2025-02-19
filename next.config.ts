@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export', // Export static HTML
   images: { unoptimized: true }, // Disable image optimization for static export
-  basePath: "/Sy-Net", // Change this to match your repo name
+  basePath: "/Sy-Net/out", // Change this to match your repo name
   assetPrefix: "/Sy-Net",
 };
 
