@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
         {/* Logo on the left */}
         <div className="flex items-center space-x-4">
-          <Image src="/nobg.png" alt="SYnet Logo" width={120} height={120} />
+          <Image src="/SY-Net/public/nobg.png" alt="SYnet Logo" width={120} height={120} />
           
         </div>
 

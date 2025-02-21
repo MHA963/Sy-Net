@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>SyNet - تأمين اسم النطاق .sy</title>
         <meta name="description" content="سجل وادارة نطاقات .sy مع SYnet. تسعير معقول وإدارة سهلة." />
-        {/* <link rel="icon" href="./favicon.ico" /> */}
+        <link rel="icon" href="/sy.ico" />
 
       </Head>
 
