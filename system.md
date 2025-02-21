@@ -140,3 +140,4 @@ Here's a detailed table listing the required components for **NIC Syria**'s infr
 | **Domain Management Software**  | Software for managing domain registrations, renewals, and updates.             | $10,000 (custom software dev) | Manage domain registration and workflows |
 
 ---
+
